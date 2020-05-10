@@ -6,6 +6,7 @@ import {MatListModule} from '@angular/material/list';
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const routes = [
   { path: '', component: AppComponent, pathMatch: 'full' }
@@ -14,7 +15,8 @@ const routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    ListComponent
+    ListComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
