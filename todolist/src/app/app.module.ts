@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 const routes = [
   { path: '', component: AppComponent, pathMatch: 'full' }
@@ -16,7 +17,8 @@ const routes = [
   declarations: [
     AppComponent,
     ListComponent,
-    NavbarComponent
+    NavbarComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
