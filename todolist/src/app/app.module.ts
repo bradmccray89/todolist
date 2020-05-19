@@ -8,9 +8,10 @@ import { ListComponent } from './list/list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { HomeComponent } from './home/home.component';
 
 const routes = [
-  { path: '', component: AppComponent, pathMatch: 'full' }
+  { path: '', component: HomeComponent, pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -18,7 +19,8 @@ const routes = [
     AppComponent,
     ListComponent,
     NavbarComponent,
-    SidenavComponent
+    SidenavComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
