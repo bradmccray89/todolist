@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
 
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
@@ -9,8 +9,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { HomeComponent } from './home/home.component';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AddTaskComponent } from './add-task/add-task.component';
 
 const routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' }
@@ -22,7 +24,8 @@ const routes = [
     ListComponent,
     NavbarComponent,
     SidenavComponent,
-    HomeComponent
+    HomeComponent,
+    AddTaskComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ const routes = [
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
