@@ -6,12 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-
-  public tasks: string[] = ['Task1', 'Task2', 'Task3'];
+  public showList = false;
+  public tasks = [];
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public addTask() {
+    console.log(`addTask`);
+    this.tasks.push('newItem');
   }
 
 }
