@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.list-wrapper {
+  width: 100%;
+}
+
+mat-selection-list {
+  width: 20em;
+  margin: 0 auto;
+}
+
+.main-content {
+  height: calc(100% - 60px);
+  width: 100%;
+  display: flex;
+}
+
+.sidenav-container {
+  width: 20em;
+  min-width: fit-content;
+  margin-left: 10px;
+  padding-top: 10px;
+  display: inline-block;
+  border-right: 1px solid black;
+}
+
+.nav-content {
+  width: 40em;
+  flex: 1;
+}
