@@ -12,7 +12,7 @@ export class ListComponent implements OnInit {
   dialogRef: MatDialogRef<AddTaskComponent>;
   public showList = false;
   public tasks: Task[] = [];
-  public taskData = new Task('', '');
+  public taskData = new Task();
   name = '';
   description = '';
   index = 0;
@@ -23,20 +23,18 @@ export class ListComponent implements OnInit {
   }
 
   public addTask() {
-    console.log(`addTask`);
     this.openDialog();
   }
 
   public openDialog() {
     this.dialogRef = this.dialog.open(AddTaskComponent, {
       width: '25em',
-      height: '15em',
       data: this.taskData
     });
 
-    this.dialogRef.afterClosed().subscribe(result => {
-      console.log(`dialog closed! result: ${result}`);
-      this.taskData = result;
+    this.dialogRef.afterClosed().subscribe((result: any) => {
+      console.log('result:', result);
+      this.tasks.push(result.value);
     });
   }
 

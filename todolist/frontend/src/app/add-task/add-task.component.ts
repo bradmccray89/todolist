@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { Task } from '../models/task.model';
 
 @Component({
   selector: 'app-add-task',
@@ -9,22 +10,16 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class AddTaskComponent implements OnInit{
 
-  form: FormGroup;
+  taskForm: FormGroup;
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private dialogRef: MatDialogRef<AddTaskComponent>
-  ) {}
+  constructor(private formBuilder: FormBuilder, private dialogRef: MatDialogRef<AddTaskComponent>) {}
 
   ngOnInit() {
-    this.form = this.formBuilder.group({
-      name: '',
-      description: ''
-    });
+    this.taskForm = this.formBuilder.group(new Task());
   }
 
-  save(form) {
-    this.dialogRef.close(`${form}`);
+  save() {
+    this.dialogRef.close(this.taskForm);
   }
 
 }

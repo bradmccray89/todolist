@@ -3,9 +3,8 @@
     <mat-list-option checkboxPosition="before" *ngFor="let task of tasks">
       {{task.name}}
     </mat-list-option>
-    <button mat-flat-button aria-label="Add new task to list" (click)="addTask()">
-      <mat-icon>add_circle_outline</mat-icon>
-      <span class="ml-3">Add New Task</span>
-    </button>
   </mat-selection-list>
+  <div class="m-3">
+    <button type="button" class="btn btn-primary btn-sm btn-block" (click)="addTask()">Add New Task</button>
+  </div>
 </div>
