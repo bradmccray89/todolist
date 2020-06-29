@@ -33,8 +33,7 @@ export class ListComponent implements OnInit {
     });
 
     this.dialogRef.afterClosed().subscribe((result: any) => {
-      console.log('result:', result);
-      this.tasks.push(result.value);
+      if (result.value) this.tasks.push(result.value);
     });
   }
 
