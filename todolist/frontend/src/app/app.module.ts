@@ -14,7 +14,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AddTaskComponent } from './add-task/add-task.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 const routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' }
@@ -38,7 +40,9 @@ const routes = [
     MatIconModule,
     MatDialogModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatExpansionModule,
+    MatCheckboxModule
   ],
   entryComponents: [AddTaskComponent],
   providers: [],

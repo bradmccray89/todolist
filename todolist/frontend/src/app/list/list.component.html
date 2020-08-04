@@ -1,10 +1,18 @@
 <div class="list-wrapper">
-  <mat-selection-list>
+  <!-- <mat-selection-list>
     <mat-list-option checkboxPosition="before" *ngFor="let task of tasks">
       {{task.name}}
     </mat-list-option>
-  </mat-selection-list>
-  <div class="m-3">
-    <button type="button" class="btn btn-primary btn-sm btn-block" (click)="addTask()">Add New Task</button>
-  </div>
+  </mat-selection-list> -->
+  <mat-expansion-panel class="item" hideToggle *ngFor="let task of tasks">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-checkbox>{{task.name}}</mat-checkbox>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>{{task.description}}</p>
+  </mat-expansion-panel>
+</div>
+<div class="m-3">
+  <button type="button" class="btn btn-primary btn-sm btn-block" (click)="addTask()">Add New Task</button>
 </div>
