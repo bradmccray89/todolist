@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Task } from '../models/task.model';
-import {AddTaskComponent} from '../add-task/add-task.component';
+import { AddTaskComponent } from '../add-task/add-task.component';
+import { TaskService } from '../services/task.service';
 
 @Component({
   selector: 'app-list',
@@ -17,7 +18,8 @@ export class ListComponent implements OnInit {
   description = '';
   index = 0;
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog,
+    private taskService: TaskService) { }
 
   ngOnInit(): void {
   }
@@ -34,7 +36,15 @@ export class ListComponent implements OnInit {
 
     this.dialogRef.afterClosed().subscribe((result: any) => {
       if (result.value) this.tasks.push(result.value);
+      console.log('result', result)
+      this.saveNewTask(result.value);
     });
+  }
+
+  public saveNewTask(data) {
+    this.taskService.create(data).subscribe(response => {
+      console.log('response', response);
+    })
   }
 
 }

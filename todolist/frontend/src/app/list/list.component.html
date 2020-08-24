@@ -2,21 +2,13 @@
   <mat-selection-list>
     <mat-list-option checkboxPosition="before" *ngFor="let task of tasks">
       <div class="d-flex">
-        <div class="p-2">{{task.name}}</div>
-        <button class="btn btn-primary ml-auto" type="button" data-toggle="collapse" data-target="#taskDescription" aria-expanded="false" aria-controls="taskDescription">
+        <div class="p-2">{{task.name}} - {{task.description}}</div>
+        <!-- <button class="btn btn-primary ml-auto" type="button" data-toggle="collapse" data-target="#taskDescription" aria-expanded="false" aria-controls="taskDescription">
         </button>
-        <i class="fas fa-info-circle"></i>        
+        <i class="fas fa-info-circle"></i>         -->
       </div>
     </mat-list-option>
   </mat-selection-list>
-  <!-- <mat-expansion-panel class="item" hideToggle *ngFor="let task of tasks">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        <mat-checkbox>{{task.name}}</mat-checkbox>
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <p>{{task.description}}</p>
-  </mat-expansion-panel> -->
 </div>
 <div class="m-3">
   <button type="button" class="btn btn-primary btn-sm btn-block" (click)="addTask()">Add New Task</button>

@@ -1,5 +1,4 @@
 const express = require('express');
-const http = require('http');
 const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
@@ -8,7 +7,8 @@ const app = express();
 const db = require("./models");
 
 var corsOptions = {
-    origin:"http://localhost:8081"
+    origin:"http://localhost:8081",
+    origin:"http://localhost:4200"
 };
 
 app.use(cors(corsOptions));
@@ -24,6 +24,6 @@ db.sequelize.sync();
 
 const PORT = process.env.PORT || 8080
 
-const server = http.createServer(app)
 
-server.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
+require("./routes/task.routes")(app)
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
