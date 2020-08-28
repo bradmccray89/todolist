@@ -4,6 +4,7 @@ module.exports = app => {
     var router = require('express').Router();
 
     router.post("/", tasks.create);
+    router.get("/", tasks.findAll);
 
     app.use('/api/tasks', router);
 }

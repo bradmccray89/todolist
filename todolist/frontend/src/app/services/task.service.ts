@@ -12,4 +12,8 @@ export class TaskService {
     create(data) {
         return this.http.post(baseUrl, data);
     }
+
+    getAll() {
+        return this.http.get(baseUrl);
+    }
 }

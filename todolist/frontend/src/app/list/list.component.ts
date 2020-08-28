@@ -12,7 +12,7 @@ import { TaskService } from '../services/task.service';
 export class ListComponent implements OnInit {
   dialogRef: MatDialogRef<AddTaskComponent>;
   public showList = false;
-  public tasks: Task[] = [];
+  public tasks;
   public taskData = new Task();
   name = '';
   description = '';
@@ -22,6 +22,7 @@ export class ListComponent implements OnInit {
     private taskService: TaskService) { }
 
   ngOnInit(): void {
+    this.tasks = this.taskService.getAll();
   }
 
   public addTask() {

@@ -44,7 +44,7 @@ const routes = [
     ReactiveFormsModule,
     MatInputModule,
     MatExpansionModule,
-    MatCheckboxModule
+    MatCheckboxModule,
   ],
   entryComponents: [AddTaskComponent],
   providers: [],
