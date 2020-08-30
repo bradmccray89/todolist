@@ -1,12 +1,11 @@
 <div class="list-wrapper">
-  <mat-selection-list>
-    <mat-list-option checkboxPosition="before" *ngFor="let task of tasks">
-      <div class="d-flex">
-        <div class="p-2">{{task.name}} - {{task.description}}</div>
-      </div>
-    </mat-list-option>
-  </mat-selection-list>
+  <div class="item-container">
+    <clr-checkbox-wrapper *ngFor="let task of tasks">
+      <input type="checkbox" clrCheckbox/>
+      <label>{{ task.title }}<span *ngIf="task.description"> - {{ task.description }}</span></label>
+    </clr-checkbox-wrapper>
+  </div>
 </div>
 <div class="m-3">
-  <button type="button" class="btn btn-primary btn-sm btn-block" (click)="addTask()">Add New Task</button>
+  <button type="button" class="btn btn-primary btn-block" (click)="addTask()">Add New Task</button>
 </div>

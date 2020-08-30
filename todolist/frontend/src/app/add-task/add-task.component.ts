@@ -20,12 +20,6 @@ export class AddTaskComponent implements OnInit{
 
   save() {
     console.log('taskForm', this.taskForm);
-    const taskToSave = {
-      title: this.taskForm.get('name').value,
-      description: this.taskForm.get('description').value
-    }
-    console.log('taskToSave', taskToSave);
-    this.saveTask.emit(taskToSave);
     this.dialogRef.close(this.taskForm);
   }
 

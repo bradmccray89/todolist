@@ -1,4 +1,4 @@
 export class Task {
-  name = null;
+  title = null;
   description = null;
 }

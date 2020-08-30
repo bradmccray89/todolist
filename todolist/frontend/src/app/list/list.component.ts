@@ -22,7 +22,10 @@ export class ListComponent implements OnInit {
     private taskService: TaskService) { }
 
   ngOnInit(): void {
-    this.tasks = this.taskService.getAll();
+    this.taskService.getAll().subscribe((response: any) => {
+      console.log('response', response);
+      this.tasks = response;
+    });
   }
 
   public addTask() {
@@ -36,9 +39,11 @@ export class ListComponent implements OnInit {
     });
 
     this.dialogRef.afterClosed().subscribe((result: any) => {
-      if (result.value) this.tasks.push(result.value);
-      console.log('result', result)
-      this.saveNewTask(result.value);
+      if (result) {
+        this.tasks.push(result.value);
+        console.log('result', result)
+      }
+      // this.saveNewTask(result.value);
     });
   }
 
