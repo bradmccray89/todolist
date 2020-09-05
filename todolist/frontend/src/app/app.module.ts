@@ -19,6 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { TaskComponent } from './task/task.component';
+import { AddListComponent } from './add-list/add-list.component';
 
 const routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -32,7 +34,9 @@ const routes = [
     HeaderComponent,
     SidenavComponent,
     HomeComponent,
-    AddTaskComponent
+    AddTaskComponent,
+    TaskComponent,
+    AddListComponent
   ],
   imports: [
     HttpClientModule,

@@ -1,7 +1,4 @@
-mat-list-option {
-  height: fit-content;
-}
-
-.item {
-  width: 50%;
+.list-accordion {
+  width: 80%;
+  padding-top: 1em;
 }

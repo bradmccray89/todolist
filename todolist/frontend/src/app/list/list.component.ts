@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Task } from '../models/task.model';
-import { AddTaskComponent } from '../add-task/add-task.component';
-import { TaskService } from '../services/task.service';
+import { List } from '../models/list.model';
+import { AddListComponent } from '../add-list/add-list.component';
+import { ListService } from '../services/list.service';
 
 @Component({
   selector: 'app-list',
@@ -10,47 +10,46 @@ import { TaskService } from '../services/task.service';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  dialogRef: MatDialogRef<AddTaskComponent>;
-  public showList = false;
-  public tasks;
-  public taskData = new Task();
-  name = '';
-  description = '';
-  index = 0;
+  
+  dialogRef: MatDialogRef<AddListComponent>;
+  public lists = [];
+  public addingList = false;
+  public listData = new List();
 
   constructor(private dialog: MatDialog,
-    private taskService: TaskService) { }
+    private listService: ListService) {}
 
-  ngOnInit(): void {
-    this.taskService.getAll().subscribe((response: any) => {
+  ngOnInit() {
+    this.listService.getAll().subscribe((response: any) => {
       console.log('response', response);
-      this.tasks = response;
-    });
+      this.lists = response;
+    })
   }
 
-  public addTask() {
+  public addList() {
+    console.log('adding List');
     this.openDialog();
   }
 
   public openDialog() {
-    this.dialogRef = this.dialog.open(AddTaskComponent, {
+    this.dialogRef = this.dialog.open(AddListComponent, {
       width: '25em',
-      data: this.taskData
+      data: this.listData
     });
 
     this.dialogRef.afterClosed().subscribe((result: any) => {
       if (result) {
-        this.tasks.push(result.value);
+        this.lists.push(result.value);
         console.log('result', result)
+        this.saveNewList(result.value);
       }
-      // this.saveNewTask(result.value);
     });
   }
 
-  public saveNewTask(data) {
-    this.taskService.create(data).subscribe(response => {
+  public saveNewList(data) {
+    console.log('data', data);
+    this.listService.create(data).subscribe((response: any) => {
       console.log('response', response);
     })
   }
-
 }

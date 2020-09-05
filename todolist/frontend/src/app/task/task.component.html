@@ -1,0 +1,11 @@
+<div class="list-wrapper">
+    <div class="item-container">
+        <clr-checkbox-wrapper *ngFor="let task of tasks">
+            <input type="checkbox" clrCheckbox/>
+            <label>{{ task.title }}<span *ngIf="task.description"> - {{ task.description }}</span></label>
+        </clr-checkbox-wrapper>
+    </div>
+</div>
+<div class="m-3">
+    <button type="button" class="btn btn-primary btn-block" (click)="addTask()">Add New Task</button>
+</div>

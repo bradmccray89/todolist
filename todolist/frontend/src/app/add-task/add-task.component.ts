@@ -9,7 +9,6 @@ import { Task } from '../models/task.model';
   styleUrls: ['./add-task.component.css']
 })
 export class AddTaskComponent implements OnInit{
-  @Output() saveTask = new EventEmitter()
   taskForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private dialogRef: MatDialogRef<AddTaskComponent>) {}
@@ -22,5 +21,4 @@ export class AddTaskComponent implements OnInit{
     console.log('taskForm', this.taskForm);
     this.dialogRef.close(this.taskForm);
   }
-
 }

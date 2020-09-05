@@ -1,10 +1,10 @@
 const db = require('../models');
-const taskModel = require('../models/tasks.model');
-const Task = db.tasks;
+const taskModel = require('../models/task');
+const Task = db.Task;
 const Op = db.Sequelize.Op;
 
 exports.create = (req, res) => {
-    if (!req.body.name) {
+    if (!req.body.title) {
         res.status(400).send({
             message: "Content cannot be empty!"
         })
@@ -12,10 +12,9 @@ exports.create = (req, res) => {
     }
 
     const task = {
-        title: req.body.name,
+        title: req.body.title,
         description: req.body.description,
-        completingid: 1,
-        requestingid: 2
+        listid: req.body.listid,
     }
 
     Task.create(task)
