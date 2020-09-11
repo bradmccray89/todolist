@@ -16,4 +16,8 @@ export class TaskService {
     getAll() {
         return this.http.get(baseUrl);
     }
+
+    findAllForListId(data) {
+        return this.http.post(baseUrl + "/getallforlistid", data);
+    }
 }

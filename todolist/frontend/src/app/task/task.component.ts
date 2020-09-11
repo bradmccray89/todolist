@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Task } from '../models/task.model';
 import { AddTaskComponent } from '../add-task/add-task.component';
@@ -10,6 +10,7 @@ import { TaskService } from '../services/task.service';
   styleUrls: ['./task.component.css']
 })
 export class TaskComponent implements OnInit {
+  @Input() list;
   dialogRef: MatDialogRef<AddTaskComponent>;
   public showList = false;
   public tasks;
@@ -19,10 +20,17 @@ export class TaskComponent implements OnInit {
     private taskService: TaskService) { }
 
   ngOnInit(): void {
-    this.taskService.getAll().subscribe((response: any) => {
-      console.log('response', response);
-      this.tasks = response;
-    });
+    if (!this.list) {
+      this.taskService.getAll().subscribe((response: any) => {
+        this.tasks = response;
+      });
+    } else if (this.list) {
+      this.taskService.findAllForListId(this.list).subscribe((response: any) => {
+        this.tasks = response;
+
+      });
+
+    }
   }
 
   public addTask() {
@@ -37,8 +45,9 @@ export class TaskComponent implements OnInit {
 
     this.dialogRef.afterClosed().subscribe((result: any) => {
       if (result) {
-        this.tasks.push(result.value);
-        console.log('result', result)
+        result.patchValue({
+          listid: this.list.id
+        });
         this.saveNewTask(result.value);
       }
     });
@@ -46,7 +55,7 @@ export class TaskComponent implements OnInit {
 
   public saveNewTask(data) {
     this.taskService.create(data).subscribe(response => {
-      console.log('response', response);
+      this.tasks.push(response);
     })
   }
 }

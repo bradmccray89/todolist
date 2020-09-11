@@ -30,10 +30,7 @@ exports.create = (req, res) => {
 };
 
 exports.findAll = (req, res) => {
-    const title = req.query.title;
-    var condition = title ? { title: { [Op.like]: `%${title}%` } } : null;
-
-    Task.findAll({ where: condition })
+    Task.findAll()
         .then(data => {
             res.send(data);
         })
@@ -41,6 +38,21 @@ exports.findAll = (req, res) => {
             res.status(500).send({
                 message:
                     err.message || "Some error occurred while retrieving tasks."
+            });
+        });
+};
+
+exports.findAllForListId = (req, res) => {
+    console.log('req.body', req.body);
+
+    Task.findAll({ where: { listid: req.body.id } })
+        .then(data => {
+            res.send(data);
+        })
+        .catch(err => {
+            res.status(500).send({
+                message:
+                    err.message || "Some error occurred while retrieving lists."
             });
         });
 };

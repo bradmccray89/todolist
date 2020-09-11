@@ -29,10 +29,7 @@ exports.create = (req, res) => {
 };
 
 exports.findAll = (req, res) => {
-    const title = req.query.title;
-    var condition = title ? { title: { [Op.like]: `%${title}%` } } : null;
-
-    List.findAll({ where: condition })
+    List.findAll()
         .then(data => {
             res.send(data);
         })

@@ -21,13 +21,11 @@ export class ListComponent implements OnInit {
 
   ngOnInit() {
     this.listService.getAll().subscribe((response: any) => {
-      console.log('response', response);
       this.lists = response;
     })
   }
 
   public addList() {
-    console.log('adding List');
     this.openDialog();
   }
 
@@ -39,17 +37,14 @@ export class ListComponent implements OnInit {
 
     this.dialogRef.afterClosed().subscribe((result: any) => {
       if (result) {
-        this.lists.push(result.value);
-        console.log('result', result)
         this.saveNewList(result.value);
       }
     });
   }
 
   public saveNewList(data) {
-    console.log('data', data);
     this.listService.create(data).subscribe((response: any) => {
-      console.log('response', response);
+      this.lists.push(response);
     })
   }
 }

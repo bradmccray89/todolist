@@ -6,4 +6,6 @@ task.post("/", tasks.create);
 
 task.get("/", tasks.findAll);
 
+task.post("/getallforlistid", tasks.findAllForListId);
+
 module.exports = task;

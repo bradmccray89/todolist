@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.hasMany(models.Task);
+      this.hasMany(models.Task, { foreignKey: 'listid' });
     }
   };
   List.init({

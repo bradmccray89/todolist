@@ -3,7 +3,9 @@
   <clr-accordion class="list-accordion">
     <clr-accordion-panel *ngFor="let list of lists">
       <clr-accordion-title>{{ list.title }}</clr-accordion-title>
-      <clr-accordion-content *clrIfExpanded>{{ list.description }}</clr-accordion-content>
+      <clr-accordion-content *clrIfExpanded>
+        <app-task [list]="list"></app-task>
+      </clr-accordion-content>
     </clr-accordion-panel>
   </clr-accordion>
 </div>

@@ -15,7 +15,7 @@ var corsOptions = {
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(express.static(__dirname + '/frontend/dist/todolist'));
+app.use(express.static(__dirname + '/frontend/dist/todolist'));
 
 app.get("/*", (req, res) => {
     res.sendFile(path.join(__dirname))
