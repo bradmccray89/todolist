@@ -1,1 +1,12 @@
-<app-home></app-home>
+<div class="main-container d-flex flex-column">
+    <app-header></app-header>
+    <div class="main-content">
+      <clr-vertical-nav>
+        <a clrVerticalNavLink routerLink="/lists" routerLinkActive="active"><clr-icon shape="view-list"></clr-icon> Lists</a>
+        <a clrVerticalNavLink routerLink="/groups" routerLinkActive="active"><clr-icon shape="users"></clr-icon> Groups</a>
+      </clr-vertical-nav>
+      <div class="nav-content">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
