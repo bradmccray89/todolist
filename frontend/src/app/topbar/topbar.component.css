@@ -1,0 +1,28 @@
+.toolbar {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  padding: 1em;
+  border-bottom: 1px solid #a9c8e7;
+  background-color: #e7e4e4;
+  line-height: 1.25em;
+}
+
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.left-nav {
+  display: flex;
+  justify-content: flex-start;
+  flex: 1;
+}
+
+.right-nav {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+}

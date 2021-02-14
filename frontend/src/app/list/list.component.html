@@ -1,13 +1,5 @@
 <div class="list-wrapper">
   <div *ngIf="!lists.length">No lists available!</div>
-  <clr-accordion class="list-accordion">
-    <clr-accordion-panel *ngFor="let list of lists">
-      <clr-accordion-title>{{ list.title }}</clr-accordion-title>
-      <clr-accordion-content *clrIfExpanded>
-        <app-task [list]="list"></app-task>
-      </clr-accordion-content>
-    </clr-accordion-panel>
-  </clr-accordion>
 </div>
 <div class="m-3">
   <button type="button" class="btn btn-primary btn-block" (click)="addList()">Add New List</button>

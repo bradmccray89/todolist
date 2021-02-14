@@ -1,0 +1,27 @@
+.search-bar {
+  border-radius: 2em;
+}
+
+.search-bar:focus-within {
+  box-shadow: 0 0 3pt 1pt rgb(33, 102, 250);
+}
+
+.search-icon {
+  border-top-left-radius: 2em;
+  border-bottom-left-radius: 2em;
+  background-color: white;
+}
+
+.search-text-field {
+  width: 400px;
+  border-left: 0;
+  border-right: 1px solid #ced4da;
+  border-top: 1px solid #ced4da;
+  border-bottom: 1px solid #ced4da;
+  border-top-right-radius: 2em !important;
+  border-bottom-right-radius: 2em !important;
+}
+
+.search-text-field:focus {
+  outline: none;
+}
