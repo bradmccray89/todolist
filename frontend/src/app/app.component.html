@@ -1,8 +1,8 @@
 <div class="main-container d-flex flex-column">
-    <app-topbar></app-topbar>
-    <div class="main-content">
-      <div class="nav-content">
-        <router-outlet></router-outlet>
-      </div>
+  <app-topbar (showNav)="toggleNavBar()" *ngIf="showNav"></app-topbar>
+  <div class="main-content">
+    <div class="nav-content">
+      <router-outlet></router-outlet>
     </div>
   </div>
+</div>

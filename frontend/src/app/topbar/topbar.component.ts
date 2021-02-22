@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 
@@ -9,6 +9,7 @@ import { MenuItem } from 'primeng/api';
 })
 export class TopbarComponent implements OnInit {
   items: MenuItem[];
+  @Output() showNav: EventEmitter<string> = new EventEmitter();
 
   constructor(private router: Router) { }
 
@@ -34,6 +35,10 @@ export class TopbarComponent implements OnInit {
     } else {
       return true;
     }
+  }
+
+  toggleNavBar() {
+    this.showNav.emit();
   }
 
 }

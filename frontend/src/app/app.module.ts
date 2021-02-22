@@ -15,6 +15,10 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
+import { CardModule } from 'primeng/card';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { ProgressBarModule } from 'primeng/progressbar';
+import { InputTextModule } from 'primeng/inputtext';
 
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
@@ -26,11 +30,13 @@ import { AddTaskComponent } from './add-task/add-task.component';
 import { AddListComponent } from './add-list/add-list.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 const routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
-  { path: 'lists', component: ListComponent, pathMatch: 'full'}
+  { path: 'lists', component: ListComponent, pathMatch: 'full' },
+  { path: 'signup', component: SignupComponent, pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -44,7 +50,8 @@ const routes = [
     TaskComponent,
     AddListComponent,
     TopbarComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    SignupComponent
   ],
   imports: [
     HttpClientModule,
@@ -62,7 +69,11 @@ const routes = [
     MatGridListModule,
     ButtonModule,
     RippleModule,
-    MatToolbarModule
+    MatToolbarModule,
+    CardModule,
+    ProgressSpinnerModule,
+    ProgressBarModule,
+    InputTextModule
   ],
   entryComponents: [AddTaskComponent],
   providers: [],

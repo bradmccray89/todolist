@@ -1,0 +1,21 @@
+<div class="bg-image"></div>
+<div class="full-page p-d-flex p-jc-center p-ai-center">
+    <p-card class="signup p-shadow-10">
+        <!-- <ng-template pTemplate="header">
+            <div class="p-d-flex">
+                <button pButton pRipple type="button" icon="pi pi-times" (click)="close()"
+                    class="p-ml-auto p-mt-1 p-mr-1 p-button-rounded p-button-text">
+                </button>
+            </div>
+        </ng-template> -->
+        <div class="p-fluid">
+            <div class="p-field">
+                <label for="email1">Email</label>
+                <input id="email1" type="text" pInputText>
+            </div>
+        </div>
+        <ng-template class="p-ml-auto" pTemplate="footer">
+            <button pButton type="button" label="Sign Up" (click)="signUp()"></button>
+        </ng-template>
+    </p-card>
+</div>
