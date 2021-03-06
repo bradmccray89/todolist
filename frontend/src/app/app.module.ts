@@ -19,6 +19,7 @@ import { CardModule } from 'primeng/card';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { InputTextModule } from 'primeng/inputtext';
+import { PasswordModule } from 'primeng/password';
 
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
@@ -73,7 +74,8 @@ const routes = [
     CardModule,
     ProgressSpinnerModule,
     ProgressBarModule,
-    InputTextModule
+    InputTextModule,
+    PasswordModule
   ],
   entryComponents: [AddTaskComponent],
   providers: [],

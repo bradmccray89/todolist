@@ -10,8 +10,22 @@
         </ng-template> -->
         <div class="p-fluid">
             <div class="p-field">
-                <label for="email1">Email</label>
-                <input id="email1" type="text" pInputText>
+                <label for="email">Email</label>
+                <input id="email" type="text" pInputText>
+            </div>
+            <div class="p-field">
+                <label for="username">Username</label>
+                <input id="username" type="text" pInputText>
+            </div>
+            <div class="p-field">
+                <label for="password">Password</label>
+                <!-- <input id="password" type="password" pInputText> -->
+                <p-password id="password" [(ngModel)]="password" [toggleMask]="true"></p-password>
+            </div>
+            <div class="p-field">
+                <label for="confirm-password">Confirm Password</label>
+                <!-- <input id="confirm-password" type="password" pInputText> -->
+                <p-password id="confirm-password" [(ngModel)]="confirmPassword" [feedback]="false"></p-password>
             </div>
         </div>
         <ng-template class="p-ml-auto" pTemplate="footer">
