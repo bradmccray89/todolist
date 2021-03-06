@@ -7,7 +7,6 @@ import {
   NavigationStart,
   Router
 } from '@angular/router';
-import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 
 @Component({
   selector: 'app-root',

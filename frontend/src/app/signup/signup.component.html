@@ -19,13 +19,11 @@
             </div>
             <div class="p-field">
                 <label for="password">Password</label>
-                <!-- <input id="password" type="password" pInputText> -->
-                <p-password id="password" [(ngModel)]="password" [toggleMask]="true"></p-password>
+                <input id="password" type="password" pPassword>
             </div>
             <div class="p-field">
                 <label for="confirm-password">Confirm Password</label>
-                <!-- <input id="confirm-password" type="password" pInputText> -->
-                <p-password id="confirm-password" [(ngModel)]="confirmPassword" [feedback]="false"></p-password>
+                <input id="confirm-password" type="password" [feedback]="false" pPassword>
             </div>
         </div>
         <ng-template class="p-ml-auto" pTemplate="footer">

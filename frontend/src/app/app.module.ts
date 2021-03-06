@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { CardModule } from 'primeng/card';
@@ -32,11 +33,23 @@ import { AddListComponent } from './add-list/add-list.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { SignupComponent } from './signup/signup.component';
+import { LoggedInView } from './views/loggedinview.component'
 
 
 const routes = [
-  { path: '', component: HomeComponent, pathMatch: 'full' },
-  { path: 'lists', component: ListComponent, pathMatch: 'full' },
+  {
+    path: '', component: LoggedInView,
+    children: [
+      {
+        path: '',
+        component: HomeComponent
+      },
+      {
+        path: 'lists',
+        component: ListComponent
+      },
+    ]
+  },
   { path: 'signup', component: SignupComponent, pathMatch: 'full' }
 ];
 
@@ -52,7 +65,8 @@ const routes = [
     AddListComponent,
     TopbarComponent,
     SearchBarComponent,
-    SignupComponent
+    SignupComponent,
+    LoggedInView
   ],
   imports: [
     HttpClientModule,
@@ -68,6 +82,7 @@ const routes = [
     MatExpansionModule,
     MatCheckboxModule,
     MatGridListModule,
+    FormsModule,
     ButtonModule,
     RippleModule,
     MatToolbarModule,

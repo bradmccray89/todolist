@@ -17,6 +17,7 @@ export class SignupComponent implements OnInit {
 
   signUp() {
     console.log('signup', this.email)
+    this.close()
   }
 
   close() {
