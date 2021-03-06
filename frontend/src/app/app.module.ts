@@ -58,7 +58,7 @@ const routes = [
     HttpClientModule,
     BrowserModule,
     MatListModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }),
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
