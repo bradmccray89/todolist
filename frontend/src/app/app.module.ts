@@ -33,7 +33,7 @@ import { AddListComponent } from './add-list/add-list.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { SignupComponent } from './signup/signup.component';
-import { LoggedInView } from './views/loggedinview.component'
+import { LoggedInView } from './views/loggedinview/loggedinview.component'
 
 
 const routes = [
