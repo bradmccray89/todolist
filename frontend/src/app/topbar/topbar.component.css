@@ -26,3 +26,8 @@
   justify-content: flex-end;
   flex: 1;
 }
+
+#logo-button {
+  max-height: auto;
+  max-width: 35px;
+}

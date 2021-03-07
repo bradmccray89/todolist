@@ -21,6 +21,8 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
+import { MenuModule } from 'primeng/menu'
+import { DialogModule } from 'primeng/dialog'
 
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
@@ -33,7 +35,8 @@ import { AddListComponent } from './add-list/add-list.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { SignupComponent } from './signup/signup.component';
-import { LoggedInView } from './views/loggedinview/loggedinview.component'
+import { LoggedInView } from './views/loggedinview/loggedinview.component';
+import { SideMenuComponent } from './side-menu/side-menu.component'
 
 
 const routes = [
@@ -66,7 +69,8 @@ const routes = [
     TopbarComponent,
     SearchBarComponent,
     SignupComponent,
-    LoggedInView
+    LoggedInView,
+    SideMenuComponent
   ],
   imports: [
     HttpClientModule,
@@ -90,7 +94,9 @@ const routes = [
     ProgressSpinnerModule,
     ProgressBarModule,
     InputTextModule,
-    PasswordModule
+    PasswordModule,
+    MenuModule,
+    DialogModule
   ],
   entryComponents: [AddTaskComponent],
   providers: [],

@@ -1,6 +1,20 @@
 <div class="list-wrapper">
-  <div *ngIf="!lists.length">No lists available!</div>
+  <div *ngIf="lists.length === 0">No lists available!</div>
+</div>
+<div class="p-grid p-nogutter">
+  <p-card
+    *ngFor="let list of lists"
+    class="p-col-3 list-card"
+    header="{{list.title}}">
+    {{ list.description }}
+  </p-card>
 </div>
 <div class="m-3">
   <button type="button" class="btn btn-primary btn-block" (click)="addList()">Add New List</button>
 </div>
+<p-dialog header="Add List" [(visible)]="addingList" [style]="{width: '50vw'}" [baseZIndex]="10000">
+  <app-add-list (close)="closeAddList"></app-add-list>
+  <ng-template pTemplate="footer">
+    <p-button icon="pi pi-check" (click)="addingList=false" label="Ok" styleClass="p-button-text"></p-button>
+  </ng-template>
+</p-dialog>
